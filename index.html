@@ -402,31 +402,6 @@
     footer a {
       color: #8ad4ff;
     }
-
-    @media (max-width: 768px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
-        padding-top: 4px;
-      }
-
-      .hero-card {
-        order: -1;
-      }
-
-      .nav {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .nav-links {
-        flex-wrap: wrap;
-      }
-
-      .tokenomics-grid,
-      .stat-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-    }
   </style>
 </head>
 
@@ -505,4 +480,242 @@
         </div>
         <div class="stat-item">
           <div class="stat-label">Total Supply</div>
-          <div
+          <div class="stat-value stat-highlight">
+            1,000,000,000 AETHR
+          </div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Status</div>
+          <div class="stat-value">Community-driven experiment</div>
+        </div>
+      </div>
+
+      <div class="contract-box">
+        <strong>Contract (Base):</strong><br />
+        0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+      </div>
+    </aside>
+  </div>
+</header>
+
+<main>
+  <section id="about">
+    <div class="badge">Overview</div>
+    <h2>What is AetherSpice?</h2>
+    <p>
+      AetherSpice ($AETHR) is the native token of the Cosmo's AI project —
+      a creative AI Game Master that can turn ideas into fully playable
+      campaigns, worlds, and narrative systems on the fly.
+    </p>
+    <p>
+      Built by <strong>MagicianzCardstock LLC</strong>, AetherSpice is designed
+      as the connective tissue between AI-powered storytelling, onchain
+      ownership of digital creations, and experimental player rewards.
+    </p>
+    <p>
+      The early focus is on <strong>slow, organic growth</strong> with a
+      community of curious explorers, builders, and players who want to
+      experiment with AI-native games and shared universes.
+    </p>
+  </section>
+
+  <section id="tokenomics">
+    <div class="badge">Tokenomics</div>
+    <h2>Token Distribution (1,000,000,000 AETHR)</h2>
+    <p>
+      The numbers below are a simple, transparent starting breakdown. As the
+      project evolves, allocations may be refined via community discussion.
+    </p>
+
+    <div class="tokenomics-grid">
+      <div class="tokenomics-card">
+        <div class="tokenomics-title">Liquidity &amp; Market</div>
+        <div class="tokenomics-percent">50%</div>
+        <div class="tokenomics-note">
+          Dedicated to liquidity pools and fair access for early holders.
+        </div>
+      </div>
+
+      <div class="tokenomics-card">
+        <div class="tokenomics-title">Community &amp; Rewards</div>
+        <div class="tokenomics-percent">30%</div>
+        <div class="tokenomics-note">
+          For grassroots incentives, contributor rewards, and creative
+          experiments around Cosmo's AI.
+        </div>
+      </div>
+
+      <div class="tokenomics-card">
+        <div class="tokenomics-title">AI &amp; Development</div>
+        <div class="tokenomics-percent">15%</div>
+        <div class="tokenomics-note">
+          Fuels ongoing development, infra, and AI-driven features connected to
+          the Virtuals prototype and beyond.
+        </div>
+      </div>
+
+      <div class="tokenomics-card">
+        <div class="tokenomics-title">Team &amp; Operations</div>
+        <div class="tokenomics-percent">5%</div>
+        <div class="tokenomics-note">
+          Modest allocation for MagicianzCardstock LLC to sustain and steward
+          the project in its early phases.
+        </div>
+      </div>
+    </div>
+
+    <p style="margin-top:10px;font-size:12px;color:var(--text-muted);">
+      Note: These figures are conceptual and may be updated. Always verify
+      live token distribution and onchain data independently.
+    </p>
+  </section>
+
+  <section id="cosmos-ai">
+    <div class="badge">Cosmo's AI</div>
+    <h2>Cosmo's AI — An AI Game Master on Virtuals</h2>
+    <p>
+      Cosmo's AI is built on <strong>Virtuals Protocol</strong>. It acts like a
+      24/7 Game Master that can:
+    </p>
+    <ul
+      class="how-to-buy-list"
+      style="list-style:disc;margin-left:16px;"
+    >
+      <li>Turn a single sentence into a full campaign or scenario.</li>
+      <li>Create NPCs, locations, rules, and story arcs dynamically.</li>
+      <li>Adapt to your playstyle over time.</li>
+      <li>Experiment with shared worlds between multiple creators.</li>
+    </ul>
+    <p>
+      AetherSpice ties into this by eventually powering things like:
+    </p>
+    <ul
+      class="how-to-buy-list"
+      style="list-style:disc;margin-left:16px;"
+    >
+      <li>Access to premium or extended AI features.</li>
+      <li>Reward loops for players, storytellers, and world-builders.</li>
+      <li>Onchain records of stories, worlds, and digital artifacts.</li>
+    </ul>
+    <p>
+      You can view the live Virtuals prototype here:<br />
+      <a
+        href="https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Cosmo's AI on Virtuals Protocol
+      </a>
+    </p>
+  </section>
+
+  <section id="how-to-buy">
+    <div class="badge">Getting Started</div>
+    <h2>How to Get AetherSpice (High-Level)</h2>
+    <p>
+      Exact trading links and pools may change over time. Always ensure you're
+      using the correct contract address on Base:
+    </p>
+    <div class="contract-box" style="margin:6px 0 10px;">
+      0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+    </div>
+    <ol class="how-to-buy-list">
+      <li>
+        Use a wallet that supports the Base network (e.g. MetaMask, Coinbase
+        Wallet).
+      </li>
+      <li>Bridge funds to Base (typically ETH on Base for gas and swaps).</li>
+      <li>
+        Import the $AETHR contract using the address above.
+      </li>
+      <li>
+        Verify any DEX or link you use via trusted sources and BaseScan.
+      </li>
+    </ol>
+    <p style="font-size:12px;color:var(--danger);margin-top:6px;">
+      Warning: Anyone can create fake tokens. Always double-check the contract
+      address and never trade more than you can afford to lose.
+    </p>
+  </section>
+
+  <section id="roadmap">
+    <div class="badge">Roadmap</div>
+    <h2>Lightweight Roadmap</h2>
+    <p>
+      This roadmap is intentionally minimal and flexible. The goal is to
+      experiment, listen to the community, and build in public.
+    </p>
+    <ul class="roadmap-steps">
+      <li>
+        <span class="phase-label">Phase 1 — Launch &amp; Foundations</span>
+        Deploy token on Base, basic website, and Cosmo's AI prototype on
+        Virtuals. Begin sharing the concept with a small, curious community.
+      </li>
+      <li>
+        <span class="phase-label">Phase 2 — AI &amp; World-Building</span>
+        Improve Cosmo's AI interactions, refine prompts, and test AI-powered
+        campaigns with early players and storytellers.
+      </li>
+      <li>
+        <span class="phase-label">Phase 3 — Utility Experiments</span>
+        Explore simple token integrations such as access gates, rewards, or
+        collectible story artifacts tied to AI-generated worlds.
+      </li>
+      <li>
+        <span class="phase-label">Phase 4 — Community Co-Creation</span>
+        Invite creators and holders to propose features, worlds, and mechanics,
+        evolving AetherSpice and Cosmo's AI together.
+      </li>
+    </ul>
+  </section>
+
+  <section id="links">
+    <div class="badge">Official Links</div>
+    <h2>Project Links &amp; Resources</h2>
+    <ul class="links-list">
+      <li>
+        <strong>BaseScan Token Page:</strong><br />
+        <a
+          href="https://basescan.org/token/0x00cC754997F36e35bE64c693791Fa4B22340DA0A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://basescan.org/token/0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+        </a>
+      </li>
+      <li>
+        <strong>Virtuals AI Page (Cosmo's AI):</strong><br />
+        <a
+          href="https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+        </a>
+      </li>
+      <li>
+        <strong>GitHub Assets Repo:</strong><br />
+        <a
+          href="https://github.com/magicianzcardstockllc/cosmos-ai-assets"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          https://github.com/magicianzcardstockllc/cosmos-ai-assets
+        </a>
+      </li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  © 2025 MagicianzCardstock LLC · AetherSpice ($AETHR) on Base · 
+  This site is for informational purposes only and does not constitute financial advice.
+  <br /><br />
+  <strong>Contact:</strong>
+  <a href="mailto:magicianzcardstock@gmail.com">
+    magicianzcardstock@gmail.com
+  </a>
+</footer>
+
+</body>
+</html>
