@@ -1,94 +1,508 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<title>AetherSpice ($AETHR) — Official Token Website</title>
+  <title>AetherSpice ($AETHR) — Official Token Website</title>
 
-<style>
+  <style>
+    :root {
+      --bg: #05060a;
+      --bg-alt: #0d0f16;
+      --card: #11141f;
+      --accent: #7f5bff;
+      --accent-soft: rgba(127, 91, 255, 0.2);
+      --text-main: #f8f8ff;
+      --text-muted: #a0a3b8;
+      --border-subtle: #232633;
+      --danger: #ff4d88;
+      --success: #3ecf8e;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #0d0d0d;
-        color: #ffffff;
-        line-height: 1.6;
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: radial-gradient(circle at top, #151829 0, #05060a 55%);
+      color: var(--text-main);
+      line-height: 1.6;
     }
-    header {
-        background: #111;
-        padding: 20px;
-        text-align: center;
-        border-bottom: 1px solid #333;
-    }
-    h1 {
-        margin: 10px 0;
-        font-size: 28px;
-    }
-    .section {
-        padding: 25px;
-        max-width: 900px;
-        margin: auto;
-    }
-    .section h2 {
-        border-bottom: 1px solid #333;
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-    }
+
     a {
-        color: #66ccff;
-        word-break: break-all;
+      color: #8ad4ff;
+      text-decoration: none;
     }
-    .footer {
-        text-align: center;
-        padding: 20px;
-        border-top: 1px solid #333;
-        margin-top: 40px;
-        font-size: 14px;
-        color: #999;
+
+    a:hover {
+      text-decoration: underline;
     }
-</style>
+
+    header {
+      border-bottom: 1px solid var(--border-subtle);
+      background: linear-gradient(
+        135deg,
+        rgba(127, 91, 255, 0.2),
+        rgba(0, 0, 0, 0.6)
+      );
+      padding: 24px 16px 32px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .nav-title {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .nav-pill {
+      width: 26px;
+      height: 26px;
+      border-radius: 10px;
+      background: radial-gradient(circle at 30% 20%, #ffe066, #ff4d88);
+      box-shadow: 0 0 18px rgba(255, 77, 136, 0.7);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 14px;
+      font-size: 14px;
+    }
+
+    .nav-links a {
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+    }
+
+    .nav-links a:hover {
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+      background: rgba(0, 0, 0, 0.2);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 8px 0 8px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1.2fr);
+      gap: 24px;
+      align-items: center;
+    }
+
+    .hero-main h1 {
+      font-size: 32px;
+      margin: 0 0 8px;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(5, 6, 10, 0.7);
+      border: 1px solid var(--accent-soft);
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .hero-pill span {
+      display: inline-flex;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: #d6cfff;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .hero-subtitle {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 16px;
+      max-width: 520px;
+    }
+
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 14px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      text-decoration: none;
+      transition: transform 0.08s ease, box-shadow 0.08s ease,
+        background 0.12s ease, border-color 0.12s ease;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent), #ff4d88);
+      color: #ffffff;
+      box-shadow: 0 0 18px rgba(127, 91, 255, 0.6);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 22px rgba(127, 91, 255, 0.9);
+    }
+
+    .btn-outline {
+      border-color: var(--border-subtle);
+      color: var(--text-main);
+      background: rgba(5, 6, 10, 0.8);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent-soft);
+      background: rgba(11, 14, 22, 0.9);
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .hero-card {
+      background: rgba(5, 6, 10, 0.9);
+      border-radius: 18px;
+      padding: 18px 18px 16px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-card-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .hero-card-main {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .hero-card-tagline {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 12px;
+      font-size: 13px;
+    }
+
+    .stat-item {
+      padding: 10px 10px;
+      border-radius: 12px;
+      background: #0a0d15;
+      border: 1px solid rgba(88, 94, 132, 0.5);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .stat-value {
+      font-weight: 600;
+      font-size: 13px;
+    }
+
+    .stat-highlight {
+      color: var(--success);
+    }
+
+    .contract-box {
+      font-family: "SFMono-Regular", ui-monospace, Menlo, Monaco, Consolas,
+        "Liberation Mono", "Courier New", monospace;
+      font-size: 12px;
+      background: #05060a;
+      border-radius: 10px;
+      padding: 8px 10px;
+      border: 1px dashed var(--border-subtle);
+      color: var(--text-muted);
+      word-break: break-all;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 24px auto 40px;
+      padding: 0 16px 24px;
+    }
+
+    section {
+      margin-bottom: 28px;
+      background: var(--bg-alt);
+      border-radius: 18px;
+      border: 1px solid var(--border-subtle);
+      padding: 18px 18px 20px;
+    }
+
+    section h2 {
+      font-size: 18px;
+      margin: 0 0 8px;
+    }
+
+    section p {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin: 0 0 10px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      padding: 3px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .tokenomics-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 6px;
+      font-size: 13px;
+    }
+
+    .tokenomics-card {
+      background: #0b0e18;
+      border-radius: 14px;
+      padding: 10px 12px 10px;
+      border: 1px solid rgba(88, 94, 132, 0.6);
+    }
+
+    .tokenomics-title {
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+
+    .tokenomics-percent {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .tokenomics-note {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .links-list {
+      list-style: none;
+      padding: 0;
+      margin: 6px 0 0;
+      font-size: 14px;
+    }
+
+    .links-list li {
+      margin-bottom: 6px;
+    }
+
+    .links-list a {
+      word-break: break-all;
+    }
+
+    .roadmap-steps {
+      list-style: none;
+      padding: 0;
+      margin: 4px 0 0;
+      font-size: 14px;
+    }
+
+    .roadmap-steps li {
+      padding: 6px 0;
+      border-bottom: 1px dashed #262a39;
+    }
+
+    .roadmap-steps li:last-child {
+      border-bottom: none;
+    }
+
+    .phase-label {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .how-to-buy-list {
+      list-style: decimal;
+      padding-left: 18px;
+      margin: 6px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+
+    .how-to-buy-list li {
+      margin-bottom: 6px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-subtle);
+      padding: 16px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      background: #05060a;
+    }
+
+    footer a {
+      color: #8ad4ff;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 4px;
+      }
+
+      .hero-card {
+        order: -1;
+      }
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .tokenomics-grid,
+      .stat-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+  </style>
 </head>
 
 <body>
 
 <header>
-    <h1>AetherSpice ($AETHR)</h1>
-    <p>The official token of Cosmo's AI project.</p>
-</header>
+  <div class="nav">
+    <div class="nav-title">
+      <div class="nav-pill"></div>
+      AetherSpice · Cosmo's AI
+    </div>
+    <nav class="nav-links">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#cosmos-ai">Cosmo's AI</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#links">Links</a>
+    </nav>
+  </div>
 
-<div class="section">
-    <h2>Token Information</h2>
-    <p><strong>Name:</strong> AetherSpice</p>
-    <p><strong>Ticker:</strong> $AETHR</p>
-    <p><strong>Network:</strong> Base</p>
-    <p><strong>Total Supply:</strong> 1,000,000 AETHR</p>
-</div>
+  <div class="hero">
+    <div class="hero-main">
+      <div class="hero-pill">
+        <span>$AETHR</span>
+        Utility token for Cosmo's AI
+      </div>
+      <h1>AetherSpice ($AETHR)</h1>
+      <p class="hero-subtitle">
+        AetherSpice is the utility token behind Cosmo's AI — a creative
+        game-master intelligence built by MagicianzCardstock LLC on the
+        Base network. Holders help fuel experiments in AI-driven stories,
+        worlds, and player rewards.
+      </p>
 
-<div class="section">
-    <h2>Contract Address</h2>
-    <p><strong>Base Contract:</strong></p>
-    <p>
-        <a href="https://basescan.org/token/0x00cC754997F36e35bE64c693791Fa4B22340DA0A" target="_blank">
-            0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+      <div class="hero-cta">
+        <a
+          class="btn btn-primary"
+          href="https://basescan.org/token/0x00cC754997F36e35bE64c693791Fa4B22340DA0A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View on BaseScan
         </a>
-    </p>
-</div>
 
-<div class="section">
-    <h2>Project Links</h2>
-
-    <p><strong>Virtuals AI Page:</strong><br>
-        <a href="https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A" target="_blank">
-            https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A
+        <a
+          class="btn btn-outline"
+          href="https://app.virtuals.io/prototypes/0x00cC754997F36e35bE64c693791Fa4B22340DA0A"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Visit Cosmo's AI on Virtuals
         </a>
-    </p>
+      </div>
 
-    <p><strong>GitHub Assets Repo:</strong><br>
-        <a href="https://github.com/magicianzcardstockllc/cosmos-ai-assets" target="_blank">
-            https://github.com/magicianzcardstockllc/cosmos-ai-assets
-        </a>
-    </p>
+      <div class="hero-note">
+        This site is informational only and does not constitute financial advice.
+        Always do your own research.
+      </div>
+    </div>
 
-    <p><strong>BaseScan Token Page:</strong><br>
-        <a href="https://basescan.org/token/0x00cC754997F36e35bE64c693791Fa4B22340DA0A" target="_blank">
-            https://basescan.org/token/
+    <aside class="hero-card">
+      <div class="hero-card-title">Token Snapshot</div>
+      <div class="hero-card-main">1,000,000,000 AETHR</div>
+      <div class="hero-card-tagline">
+        Fixed supply utility token deployed on Base.
+      </div>
+
+      <div class="stat-grid">
+        <div class="stat-item">
+          <div class="stat-label">Network</div>
+          <div class="stat-value">Base (L2)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Ticker</div>
+          <div class="stat-value">$AETHR</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-label">Total Supply</div>
+          <div
